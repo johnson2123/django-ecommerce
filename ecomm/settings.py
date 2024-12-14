@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #load our environmental variables
 load_dotenv()
 
-DB_PASS_YO = os.environ['DB_PASS_YO']
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-4^z=#4&44lf6x8g%191ujn49@ak37r5i#j9+&p@$dtssk6zssj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://django-ecommerce-app-production-f102.up.railway.app', 'django-ecommerce-app-production-f102.up.railway.app']
+ALLOWED_HOSTS = ['*','https://django-ecommerce-app-production-f102.up.railway.app', 'django-ecommerce-app-production-f102.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://django-ecommerce-app-production-f102.up.railway.app']
 
 
@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': DB_PASS_YO,
+        'PASSWORD': os.environ.get('DB_PASS_YO'),
         'HOST': 'junction.proxy.rlwy.net',
         'PORT': '26946',
 
