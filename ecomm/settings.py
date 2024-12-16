@@ -33,8 +33,8 @@ SECRET_KEY = 'django-insecure-4^z=#4&44lf6x8g%191ujn49@ak37r5i#j9+&p@$dtssk6zssj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://django-ecommerce-app-bris.onrender.com', 'https://https://django-ecommerce-app-bris.onrender.com','*']
-CSRF_TRUSTED_ORIGINS = ['https://https://django-ecommerce-app-bris.onrender.com']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = []
 
 
 # Application definition
