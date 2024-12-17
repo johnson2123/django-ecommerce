@@ -28,20 +28,19 @@
                                     <div class="text-center">
                                         <!-- Product name-->
                                         <h5 class="fw-bolder">{{ product.name }}</h5>
+                                        <br/>
+                                        {{ product.description }}
                                         <!-- Product reviews-->
                                         <div class="d-flex justify-content-center small text-warning mb-2">
                                             <div class="bi-star-fill"></div>
+                                            &nbsp;&nbsp;Sale!&nbsp;&nbsp;
                                             <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                        </div>
+                                            </div>
                                         <!-- Product price-->
                                         <strike>${{ product.price }}</strike>
                                         <br/>
                                         ${{ product.sale_price }}
-                                        <br/>
-                                        {{ product.description }}
+
                                     </div>
                                 </div>
                                 <!-- Product actions-->
@@ -60,10 +59,11 @@
                                     <div class="text-center">
                                         <!-- Product name-->
                                         <h5 class="fw-bolder">{{ product.name }}</h5>
-                                        <!-- Product price-->
-                                        ${{ product.price }}
                                         <br/>
                                         {{ product.description }}
+                                        <!-- Product price-->
+                                        ${{ product.price }}
+
                                     </div>
                                 </div>
                                 <!-- Product actions-->
