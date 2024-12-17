@@ -33,8 +33,8 @@ SECRET_KEY = 'django-insecure-4^z=#4&44lf6x8g%191ujn49@ak37r5i#j9+&p@$dtssk6zssj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['https://django-ecommerce-app-production-7ec5.up.railway.app/', 'django-ecommerce-app-production-7ec5.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://django-ecommerce-app-production-7ec5.up.railway.app/']
 
 
 # Application definition
@@ -54,13 +54,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ecomm.urls'
