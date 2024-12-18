@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import dj_database_url
 
 from pathlib import Path
 import os
@@ -28,12 +29,12 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4^z=#4&44lf6x8g%191ujn49@ak37r5i#j9+&p@$dtssk6zssj'
-
+SECRET_KEY = os.environ.get("SECRET_KEY")
+#'django-insecure-4^z=#4&44lf6x8g%191ujn49@ak37r5i#j9+&p@$dtssk6zssj'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
 
-ALLOWED_HOSTS = ['django-ecommerce-app-8yjb.onrender.com']
+ALLOWED_HOSTS = ['django-ecommerce-app-8yjb.onrender.com','127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://django-ecommerce-app-8yjb.onrender.com']
 
 
@@ -93,16 +94,20 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': os.environ['DB_PASSWORD_YO'],
-        'HOST': 'autorack.proxy.rlwy.net',
-        'PORT': '57263',
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'railway',
+        #'USER': 'postgres',
+        #'PASSWORD': os.environ['DB_PASSWORD_YO'],
+        #'HOST': 'autorack.proxy.rlwy.net',
+        #'PORT': '57263',
 
     }
 }
 
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"]=dj_database_url.parse(database_url)
+
+#postgresql://django_ecommerce_app_user:gezzs95IBm1Rx9iHDKs7rMFFDYqgH1JK@dpg-cthhj93v2p9s73drgn5g-a.oregon-postgres.render.com/django_ecommerce_app
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
